@@ -1,0 +1,67 @@
+    1  sudo useradd -u 1234 -g students user1
+    2  id user1
+    3  sudo chage -M 90 user1
+    4  grep user1 /etc/shadow
+    5  sudo grep user1 /etc/shadow
+    6  sudo passwd user1
+    7  sudo find / -perm -4000 -fprintf /root/suid.txt '%#m %u %p\n'
+    8  sudo cat /root/suid.txt
+    9  sudo ps -eo pid,ruid,euid,comm | awk '$2 >= 1000 && $3 == 0' > procout.txt
+   10  cat procout.txt
+   11  ls
+   12  mkdir cat1
+   13  cd cat1
+   14  whereis cat
+   15  cp /usr/bin/cat
+   16  cp /usr/bin/cat /home/terver/cat1
+   17  cat /etc/shadow
+   18  sudo chmod 4755 /home/terver/cat1
+   19  ./cat /etc/shadow
+   20  sudo chown root:root /home/terver/cat1
+   21  ./cat /etc/shadow
+   22  ls -l ./cat
+   23  rm ./cat
+   24  sudo rm ./cat
+   25  ls ~/cat1
+   26  ls -l ~/cat1
+   27  cp /usr/bin/cat /home/terver/cat1
+   28  sudo cp /usr/bin/cat /home/terver/cat1
+   29  ls -l ~/cat1
+   30  ./cat /etc/shadow
+   31  cat /etc/shadow
+   32  sudo chown root:root ~/cat1
+   33  sudo chmod 4755 ~/cat1
+   34  ls -l ~/cat1
+   35  ./cat /etc/shadow
+   36  ~/cat1 /etc/shadow
+   37  cd ..
+   38  ls
+   39  ~/cat1/cat /etc/shadow
+   40  sudo chmod u+s  ~/cat1
+   41  ~/cat1/cat /etc/shadow
+   42  ls -l ~/cat1
+   43  cd cat
+   44  cd cat1
+   45  rm cat
+   46  sudo rm cat
+   47  cd ..
+   48  rmdir cat1
+   49  mkdir -p ~/cat1
+   50  cp /usr/bin/cat ~/cat1/
+   51  sudo chown root:root ~/cat1/cat
+   52  sudo chmod u+s ~/cat1/cat
+   53  ls -l ~/cat1/cat
+   54  ~/cat1/cat /etc/shadow
+   55  mkdir -p ~/chown1
+   56  whereis chown
+   57  cp /usr/bin/chown ~/chown1/
+   58  cd chown1
+   59  touch test
+   60  chown root test
+   61  sudo setcap "cap_chown=ep" chown
+   62  cd ..
+   63  ~/chown1/chown root ~/chown1/test
+   64  ls -l ~/chown1
+   65  sudo visudo
+   66  sudo -u user1 sudo date --set="Sat Sep 20 18:30:20 EEST 2026"
+   67  history > ~/history.out
